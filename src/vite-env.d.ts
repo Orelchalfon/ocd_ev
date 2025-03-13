@@ -2,12 +2,7 @@
 type Language = "en" | "he";
 type Theme = "light" | "dark";
 
-type LanguageContextType = {
 
-  language: Language;
-  setLanguage: (lang: Language) => void;
-
-}
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
