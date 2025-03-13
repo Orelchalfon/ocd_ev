@@ -8,7 +8,7 @@ const ThemeControls = () => {
   const { scrollY } = useScroll();
   const lastYRef = useRef(0);
   const { theme, toggleTheme } = useTheme();
-  const { language, setLanguage } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const difference = y - lastYRef.current;
@@ -73,7 +73,7 @@ const ThemeControls = () => {
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() => setLanguage(language === "en" ? "he" : "en")}
+        onClick={toggleLanguage}
         className='p-3 rounded-full bg-white/80 shadow-lg backdrop-blur-sm'
       >
         <span className='text-gray-800 font-medium'>
